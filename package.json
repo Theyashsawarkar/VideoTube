@@ -1,7 +1,7 @@
 {
-    "name": "coffee-backend",
+    "name": "youtube-backend",
     "version": "1.0.0",
-    "description": "backend with coffee",
+    "description": "youtube and twitter production level backend",
     "main": "index.js",
     "type": "module",
     "engines": {
@@ -14,9 +14,8 @@
     "keywords": [
         "javascript",
         "backend",
-        "coffee"
     ],
-    "author": "Hruthik",
+    "author": "Yash",
     "license": "ISC",
     "devDependencies": {
         "nodemon": "^3.0.1",
