@@ -1,9 +1,9 @@
 
-# YouTube + Twitter Backend 🚀
+# VideoTube 🚀
 
 ## Introduction
 
-Welcome to the `YOUTUBE + TWITTER` backend project! 🌐
+Welcome to the `VideoTube` backend project! 🌐
 This project seamlessly integrates the functionalities of YouTube
 with the tweeting capabilities of Twitter.
 Explore more about this exciting project in the detailed documentation below.
