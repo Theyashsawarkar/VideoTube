@@ -1,5 +1,5 @@
 
-# VideoTube 🚀
+# VideoTube 📺
 
 ## Introduction
 
