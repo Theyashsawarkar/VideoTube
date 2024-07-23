@@ -94,13 +94,13 @@ Explore more about this exciting project in the detailed documentation below.
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Theyashsawarkar/Youtube-Twitter-Backend.git
+   git clone https://github.com/Theyashsawarkar/VideoTube.git
    ```
 
 2. **Install dependencies:**
 
    ```bash
-   cd youtube-twitter
+   cd VideoTube
    npm install
    ```
 
