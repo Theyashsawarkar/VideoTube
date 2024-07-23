@@ -6,9 +6,9 @@ import mongoose, { isValidObjectId } from "mongoose";
 import { User } from "../models/user.model.js";
 
 const healthcheck = asyncHandler(async (req, res) => {
-    return res
-        .status(200)
-        .json(new ApiResponse(200, { message: "Everything is O.K" }, "Ok"));
+  return res
+    .status(200)
+    .json(new ApiResponse(200, { message: "Everything is O.K" }, "Ok"));
 });
 
 export { healthcheck };

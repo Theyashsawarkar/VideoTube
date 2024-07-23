@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 import {
-    createTweet,
-    deleteTweet,
-    updateTweet,
-    getUserTweets,
+  createTweet,
+  deleteTweet,
+  updateTweet,
+  getUserTweets,
 } from "../controllers/tweet.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 
