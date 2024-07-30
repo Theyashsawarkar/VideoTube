@@ -1,10 +1,11 @@
-import mongoose, { isValidObjectId } from "mongoose";
+import { isValidObjectId } from "mongoose";
 import { Like } from "../models/like.model.js";
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/apiError.js";
 import asyncHandler from "../utils/asyncHandler.js";
 
 const toggleVideoLike = asyncHandler(async (req, res) => {
+
   const { videoId } = req.params;
 
   if (!isValidObjectId(videoId)) {
@@ -98,10 +99,11 @@ const toggleTweetLike = asyncHandler(async (req, res) => {
 });
 
 const getLikedVideos = asyncHandler(async (req, res) => {
+
   const likedVideosAggegate = await Like.aggregate([
     {
       $match: {
-        likedBy: new mongoose.Types.ObjectId(req.user?._id),
+        likedBy: req.user?._id
       },
     },
     {

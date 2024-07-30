@@ -3,8 +3,6 @@ import ApiError from "../utils/apiError.js"
 import { User } from "../models/user.model.js"
 import { uploadOnCloudinary, deleteOnCloudinary } from "../utils/cloudinary.js"
 import ApiResponse from "../utils/ApiResponse.js"
-import JWT from "jsonwebtoken"
-import mongoose from 'mongoose'
 
 const generateAccessAndRefreshToken = async (userId) => {
 
@@ -15,6 +13,8 @@ const generateAccessAndRefreshToken = async (userId) => {
     const refreshToken = user.generateRefreshToken();
 
     user.refreshToken = refreshToken;
+
+    // stop from validation as password is required and we are not updating it here
     await user.save({ validateBeforeSave: false });
 
     return { accessToken, refreshToken };
@@ -94,6 +94,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const loginUser = asyncHandler(async (req, res) => {
+
   // req body -> data
   // username or email
   // find the user
@@ -118,7 +119,7 @@ const loginUser = asyncHandler(async (req, res) => {
   const isPasswordCorrect = await user.comparePassword(password);
 
   if (!isPasswordCorrect) {
-    throw new ApiError(401, "Invalid user credentials.");
+    throw new ApiError(401, "Invalid user password .");
   }
 
   const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
@@ -139,7 +140,10 @@ const loginUser = asyncHandler(async (req, res) => {
       new ApiResponse(
         200,
         {
-          user: loggedInUser, accessToken, refreshToken
+          user: loggedInUser,
+          // we pass tokens to cover for the cases where user can't store the cookies
+          accessToken,
+          refreshToken
         },
         "User logged in successfully !!!."
       )
@@ -229,6 +233,7 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
   }
 
   user.password = newPassword;
+  // we are preventing the validation as we are not passing all the required feilds
   await user.save({ validateBeforeSave: false });
 
   return res
@@ -433,7 +438,8 @@ const getWatchHistory = asyncHandler(async (req, res) => {
   const user = await User.aggregate([
     {
       $match: {
-        _id: new mongoose.Types.ObjectId(req.user._id)
+        // this works cause mongoose will internally convert this id into object id of mongodb
+        _id: req.user._id
       }
     },
     {

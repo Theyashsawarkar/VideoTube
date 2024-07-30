@@ -3,7 +3,7 @@ import { Video } from "../models/video.model.js";
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/apiError.js";
 import asyncHandler from "../utils/asyncHandler.js";
-import mongoose, { isValidObjectId } from "mongoose";
+import { isValidObjectId } from "mongoose";
 
 const createPlaylist = asyncHandler(async (req, res) => {
   const { name, description } = req.body;
@@ -96,7 +96,7 @@ const deletePlaylist = asyncHandler(async (req, res) => {
       new ApiResponse(
         200,
         {},
-        "playlist updated successfully"
+        "playlist deleted successfully"
       )
     );
 });
@@ -217,7 +217,7 @@ const getPlaylistById = asyncHandler(async (req, res) => {
   const playlistVideos = await Playlist.aggregate([
     {
       $match: {
-        _id: new mongoose.Types.ObjectId(playlistId)
+        _id: playlistId
       }
     },
     {
@@ -297,7 +297,7 @@ const getUserPlaylists = asyncHandler(async (req, res) => {
   const playlists = await Playlist.aggregate([
     {
       $match: {
-        owner: new mongoose.Types.ObjectId(userId)
+        owner: userId
       }
     },
     {

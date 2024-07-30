@@ -5,7 +5,9 @@ import ApiResponse from "../utils/ApiResponse.js";
 import { Subscription } from "../models/subscription.model.js";
 
 const toggleSubscription = asyncHandler(async (req, res) => {
+
   const { channelId } = req.params;
+
   // TODO: toggle subscription
 
   if (!isValidObjectId(channelId)) {
@@ -49,13 +51,14 @@ const toggleSubscription = asyncHandler(async (req, res) => {
 
 // controller to return subscriber list of a channel
 const getUserChannelSubscribers = asyncHandler(async (req, res) => {
+
   let { channelId } = req.params;
 
   if (!isValidObjectId(channelId)) {
     throw new ApiError(400, "Invalid channelId");
   }
 
-  channelId = new mongoose.Types.ObjectId(channelId);
+  // channelId = new mongoose.Types.ObjectId(channelId);
 
   const subscribers = await Subscription.aggregate([
     {
@@ -136,7 +139,7 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
   const subscribedChannels = await Subscription.aggregate([
     {
       $match: {
-        subscriber: new mongoose.Types.ObjectId(subscriberId),
+        subscriber: subscriberId
       },
     },
     {

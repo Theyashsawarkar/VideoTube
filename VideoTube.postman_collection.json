@@ -1,0 +1,1234 @@
+{
+  "info": {
+    "_postman_id": "341c5743-c903-4216-83f1-6f1261c49bee",
+    "name": "VideoTube",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29582355"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "src": "/C:/Users/yash/Pictures/Screenshots/Screenshot (2).png"
+                },
+                {
+                  "key": "coverImage",
+                  "type": "file",
+                  "src": "/C:/Users/yash/Pictures/Screenshots/Screenshot (3).png"
+                },
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "fullName",
+                  "value": "testing user",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/register",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/login",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/logout",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh access-token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/refresh-token",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "oldPassword",
+                  "value": "testingPassword@3",
+                  "type": "text"
+                },
+                {
+                  "key": "newPassword",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/change-password",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "current User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "oldPassword",
+                  "value": "testingPassword@3",
+                  "type": "text"
+                },
+                {
+                  "key": "newPassword",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/current-user",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "current-user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update user",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/update-user",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "update-user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update avatar",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/update-avatar",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "update-avatar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update coverImage",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/update-coverImg",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "update-coverImg"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "chanel profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/c/:username",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "c",
+                ":username"
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "testinguser"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "watch history",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "TestingUser",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "testing@email.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "testingPassword@1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{userRouter}}/watch-history",
+              "host": [
+                "{{userRouter}}"
+              ],
+              "path": [
+                "watch-history"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "get Video Comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{CommentRouter}}/:videoId",
+              "host": [
+                "{{CommentRouter}}"
+              ],
+              "path": [
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add comment on video",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{CommentRouter}}/:videoId",
+              "host": [
+                "{{CommentRouter}}"
+              ],
+              "path": [
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{CommentRouter}}/c/:commentId",
+              "host": [
+                "{{CommentRouter}}"
+              ],
+              "path": [
+                "c",
+                ":commentId"
+              ],
+              "variable": [
+                {
+                  "key": "commentId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update comment",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{CommentRouter}}/c/:commentId",
+              "host": [
+                "{{CommentRouter}}"
+              ],
+              "path": [
+                "c",
+                ":commentId"
+              ],
+              "variable": [
+                {
+                  "key": "commentId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Like",
+      "item": [
+        {
+          "name": "toggle video like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{likeRouter}}/toggle/v/:videoId",
+              "host": [
+                "{{likeRouter}}"
+              ],
+              "path": [
+                "toggle",
+                "v",
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "toggle comment like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{likeRouter}}/toggle/c/:commentId",
+              "host": [
+                "{{likeRouter}}"
+              ],
+              "path": [
+                "toggle",
+                "c",
+                ":commentId"
+              ],
+              "variable": [
+                {
+                  "key": "commentId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "toggle tweet like",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{likeRouter}}/toggle/t/:tweetId",
+              "host": [
+                "{{likeRouter}}"
+              ],
+              "path": [
+                "toggle",
+                "t",
+                ":tweetId"
+              ],
+              "variable": [
+                {
+                  "key": "tweetId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get liked videos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{likeRouter}}/videos",
+              "host": [
+                "{{likeRouter}}"
+              ],
+              "path": [
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Subscription",
+      "item": [
+        {
+          "name": "get channel subscribers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{subscriptionRouter}}/c/:channelId",
+              "host": [
+                "{{subscriptionRouter}}"
+              ],
+              "path": [
+                "c",
+                ":channelId"
+              ],
+              "variable": [
+                {
+                  "key": "channelId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "toggle subscription",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{subscriptionRouter}}/c/:channelId",
+              "host": [
+                "{{subscriptionRouter}}"
+              ],
+              "path": [
+                "c",
+                ":channelId"
+              ],
+              "variable": [
+                {
+                  "key": "channelId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get subscribed channels",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{subscriptionRouter}}/u/:subscriberId",
+              "host": [
+                "{{subscriptionRouter}}"
+              ],
+              "path": [
+                "u",
+                ":subscriberId"
+              ],
+              "variable": [
+                {
+                  "key": "subscriberId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tweet",
+      "item": [
+        {
+          "name": "create tweet",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "some random tweet",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{tweetRouter}}/",
+              "host": [
+                "{{tweetRouter}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get user tweets",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "some random tweet",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{tweetRouter}}/user/:userId",
+              "host": [
+                "{{tweetRouter}}"
+              ],
+              "path": [
+                "user",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update tweet",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "some random tweet",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{tweetRouter}}/:tweetId",
+              "host": [
+                "{{tweetRouter}}"
+              ],
+              "path": [
+                ":tweetId"
+              ],
+              "variable": [
+                {
+                  "key": "tweetId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete tweet",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "some random tweet",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{tweetRouter}}/:tweetId",
+              "host": [
+                "{{tweetRouter}}"
+              ],
+              "path": [
+                ":tweetId"
+              ],
+              "variable": [
+                {
+                  "key": "tweetId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Video",
+      "item": [
+        {
+          "name": "get all videos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videoRouter}}/",
+              "host": [
+                "{{videoRouter}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "publish videos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{videoRouter}}/",
+              "host": [
+                "{{videoRouter}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get video",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videoRouter}}/v/:videoId",
+              "host": [
+                "{{videoRouter}}"
+              ],
+              "path": [
+                "v",
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete video",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{videoRouter}}/v/:videoId",
+              "host": [
+                "{{videoRouter}}"
+              ],
+              "path": [
+                "v",
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update video",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{videoRouter}}/v/:videoId",
+              "host": [
+                "{{videoRouter}}"
+              ],
+              "path": [
+                "v",
+                ":videoId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "HealthCheak",
+      "item": [
+        {
+          "name": "healthcheak",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{healthcheakRouter}}/",
+              "host": [
+                "{{healthcheakRouter}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Playlist",
+      "item": [
+        {
+          "name": "create playlist",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get playlist",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/:playlistId",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                ":playlistId"
+              ],
+              "variable": [
+                {
+                  "key": "playlistId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update playlist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/:playlistId",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                ":playlistId"
+              ],
+              "variable": [
+                {
+                  "key": "playlistId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete playlist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/:playlistId",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                ":playlistId"
+              ],
+              "variable": [
+                {
+                  "key": "playlistId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add video to playlist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/add/:videoId/:playlistId",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                "add",
+                ":videoId",
+                ":playlistId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                },
+                {
+                  "key": "playlistId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "remove video from playlist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/remove/:videoId/:playlistId",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                "remove",
+                ":videoId",
+                ":playlistId"
+              ],
+              "variable": [
+                {
+                  "key": "videoId",
+                  "value": ""
+                },
+                {
+                  "key": "playlistId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get users playlists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{playlistRouter}}/user/:userId",
+              "host": [
+                "{{playlistRouter}}"
+              ],
+              "path": [
+                "user",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "get channel videos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{dashboardRouter}}/videos",
+              "host": [
+                "{{dashboardRouter}}"
+              ],
+              "path": [
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get channel stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{dashboardRouter}}/stats",
+              "host": [
+                "{{dashboardRouter}}"
+              ],
+              "path": [
+                "stats"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "userRouter",
+      "value": "{{localHostUrl}}/api/v1/users"
+    },
+    {
+      "key": "CommentRouter",
+      "value": "{{localHostUrl}}/api/v1/comment"
+    },
+    {
+      "key": "likeRouter",
+      "value": "{{localHostUrl}}/api/v1/likes"
+    },
+    {
+      "key": "subscriptionRouter",
+      "value": "{{localHostUrl}}/api/v1/subscriptions"
+    },
+    {
+      "key": "tweetRouter",
+      "value": "{{localHostUrl}}/api/v1/tweet"
+    },
+    {
+      "key": "videoRouter",
+      "value": "{{localHostUrl}}/api/v1/video"
+    },
+    {
+      "key": "healthcheakRouter",
+      "value": "{{localHostUrl}}/api/v1/healthcheck"
+    },
+    {
+      "key": "playlistRouter",
+      "value": "{{localHostUrl}}/api/v1/playlist"
+    },
+    {
+      "key": "dashboardRouter",
+      "value": "{{localHostUrl}}/api/v1/dashboard"
+    }
+  ]
+}

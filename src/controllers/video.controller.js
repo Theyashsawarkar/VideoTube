@@ -11,10 +11,13 @@ import ApiResponse from "../utils/ApiResponse.js";
 import mongoose, { isValidObjectId } from "mongoose";
 import { Like } from "../models/like.model.js";
 
-// get all videos based on query, sort, pagination
+// get all videos based on query, sort, pagination for this user
 const getAllVideos = asyncHandler(async (req, res) => {
   const { page = 1, limit = 10, query, sortBy, sortType, userId } = req.query;
-  console.log(userId);
+
+  // console.log(userId);
+
+  // these will store the stages of aggregation pipeline
   const pipeline = [];
 
   // for using Full Text based search u need to create a search index in mongoDB atlas
@@ -41,7 +44,7 @@ const getAllVideos = asyncHandler(async (req, res) => {
 
     pipeline.push({
       $match: {
-        owner: new mongoose.Types.ObjectId(userId)
+        owner: userId // mongoose internally converts it into ObjectId type
       }
     });
   }
@@ -171,7 +174,7 @@ const getVideoById = asyncHandler(async (req, res) => {
   const video = await Video.aggregate([
     {
       $match: {
-        _id: new mongoose.Types.ObjectId(videoId)
+        _id: videoId
       }
     },
     {
@@ -287,6 +290,7 @@ const getVideoById = asyncHandler(async (req, res) => {
 
 // update video details like title, description, thumbnail
 const updateVideo = asyncHandler(async (req, res) => {
+
   const { title, description } = req.body;
   const { videoId } = req.params;
 

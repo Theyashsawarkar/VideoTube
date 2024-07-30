@@ -1,4 +1,3 @@
-import mongoose, { Schema } from "mongoose";
 import { Comment } from "../models/comment.model.js";
 import { Video } from "../models/video.model.js";
 import { Like } from "../models/like.model.js";
@@ -8,6 +7,7 @@ import asyncHandler from "../utils/asyncHandler.js";
 
 // get all comments for a video
 const getVideoComments = asyncHandler(async (req, res) => {
+
   const { videoId } = req.params;
   const { page = 1, limit = 10 } = req.query;
 
@@ -20,7 +20,7 @@ const getVideoComments = asyncHandler(async (req, res) => {
   const commentsAggregate = Comment.aggregate([
     {
       $match: {
-        video: new mongoose.Types.ObjectId(videoId)
+        video: videoId
       }
     },
     {

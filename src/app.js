@@ -21,7 +21,6 @@ app.use(morgan("dev")); //HTTP request logger middleware for node.js
 
 
 //routes import
-
 import userRouter from "./routes/user.routes.js";
 import commentRouter from "./routes/comment.routes.js";
 import likeRouter from "./routes/like.routes.js";

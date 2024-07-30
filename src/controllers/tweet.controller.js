@@ -2,8 +2,7 @@ import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/apiError.js";
 import { Tweet } from "../models/tweet.model.js";
 import ApiResponse from "../utils/ApiResponse.js";
-import mongoose, { isValidObjectId } from "mongoose";
-import { User } from "../models/user.model.js";
+import { isValidObjectId } from "mongoose";
 
 const createTweet = asyncHandler(async (req, res) => {
   const { content } = req.body;
@@ -101,7 +100,7 @@ const getUserTweets = asyncHandler(async (req, res) => {
   const tweets = await Tweet.aggregate([
     {
       $match: {
-        owner: new mongoose.Types.ObjectId(userId),
+        owner: userId
       },
     },
     {

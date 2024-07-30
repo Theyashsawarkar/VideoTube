@@ -1,7 +1,7 @@
-const asyncHandler = (requestHandler) => {
+const asyncHandler = (fn) => {
   return async (req, res, next) => {
     try {
-      await Promise.resolve(requestHandler(req, res, next));
+      await Promise.resolve(fn(req, res, next));
     } catch (error) {
       const statusCode = error.statusCode || 500;
       const errorMessage = error.message || "Internal Server Error";
