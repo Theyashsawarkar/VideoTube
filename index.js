@@ -1,6 +1,6 @@
 import 'dotenv/config'
-import connectToDB from './db/dbConnect.js'
-import app from './app.js'
+import connectToDB from './src/db/dbConnect.js'
+import app from './src/app.js'
 
 
 connectToDB()
